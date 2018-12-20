@@ -2,14 +2,13 @@ public class Vlnovka {
     //TBD
     //zase ti to nefunguje!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     public static void main(String[] args) {
-        firstLine(Integer.parseInt(args[0]), 80);
-        printingLines(Integer.parseInt(args[0]), 80, Integer.parseInt(args[0]) - 1);
+        int number = Integer.parseInt(args[0]);
+        firstLine(number, 80);
+        printingLines(number, 80, Integer.parseInt(args[0]) - 1);
         
     }
     public static void firstLine(int size, int width) {
-        if (size != 0) {
             printingLines(size, width, 1);
-        }
     }
 
     public static void printingLines(int sizeOfWave, int widthOfScreen, int repetition) {
