@@ -1,21 +1,22 @@
 public class Odmocnina {
-    /*input should be: theNumber howMuchAccurate
-    howMuchAccurate means how many times run the operation - the more it does, it'll be more accurate, but it takes more time
-    howMuchAccurate = 30 works perfectly for numbers < 1 000 000*/
+    /*input should be: theNumber howAccurate
+    howAccurate means how big could be a mistake*/
+   
     public static void main(String[] args) {
         double theNumber = Double.parseDouble(args[0]);
-        int howMuchAccurate = Integer.parseInt(args[1]);
-        System.out.printf("%f", cubeRoot(theNumber, howMuchAccurate));
+        double howAccurate = Double.parseDouble(args[1]);
+        System.out.printf("%.10f", cubeRoot(theNumber, howAccurate));
     }
 
-    public static double cubeRoot(double number, int accuracy) {
-        if (accuracy == 0) {
-            double firstSolution = (1.0 / 3.0) * ((1.0 + 2.0 * number * number) / number);
-            return(firstSolution);
+    public static double cubeRoot(double number, double accuracy) {
+        double lastSolution = 1;
+        double newSolution = 2 + accuracy;
+
+        while (Math.abs(newSolution - lastSolution) >= accuracy) {
+            lastSolution = newSolution;
+            /*https://en.wikipedia.org/wiki/Cube_root*/
+            newSolution = (1.0 / 3.0) * (number / (lastSolution * lastSolution) + 2 * lastSolution);
         }
-        else {
-            double n = cubeRoot(number, accuracy - 1);
-            return((1.0 / 3.0) * ((number / (n * n)) + 2.0 * n));
-        }
-    } 
+        return newSolution;
+    }
 }

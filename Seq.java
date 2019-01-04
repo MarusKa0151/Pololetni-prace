@@ -2,9 +2,7 @@ public class Seq {
     /*printing sequences of numbers based on the input
     https://alej.alisma.cz/prog1/zp/seq.html */
     public static void main(String[] args) {
-        String letterS = "-s";
-
-        if (letterS.equals(args[0])) {
+        if ("-s".equals(args[0])) {
             special(args);
         }
 

@@ -7,14 +7,14 @@ public class Pi {
     public static boolean inCircle(double x, double y) {
         /*square has side long 1, circle radius is 0.5
         Math.pow(base, exponent) returns (double, not int) value base^exponent */
-        return(Math.pow(0.5, 2) >= (Math.pow(x - 0.5, 2) + Math.pow(y - 0.5, 2)));
+        return (0.25 >= (x * x + y * y));
     }
 
     public static void calculatingPi(int shots) {
         double shotsInCircle = 0.0;
         for (int i = 0; i < shots; i++) {
             /*Math.random() returns value from 0.0 to 1.0 */
-            if (inCircle(Math.random(), Math.random())) {
+            if (inCircle(Math.random() - 0.5, Math.random() - 0.5)) {
                 shotsInCircle += 1.0;
             }
             else {
