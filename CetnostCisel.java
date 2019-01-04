@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /*Returning integers from the most times written, in paranthesis is number of repetition */
+/*For next time better to use HashMap or HashTable!!!!!*/
 public class CetnostCisel {  
     public static void main(String[] args) {
 
