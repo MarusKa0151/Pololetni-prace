@@ -16,12 +16,18 @@ public class CetnostCisel {
                 maximum = sc.nextInt();
                 numbersFromScanner.add(0, maximum);
             }
-            position += 1;
-            numbersFromScanner.add(position, sc.nextInt());
-
-            if (numbersFromScanner.get(position) > maximum || numbersFromScanner.get(position) < -maximum) {
+            else {
+                numbersFromScanner.add(position, sc.nextInt());
+            }
+            
+            if (numbersFromScanner.get(position) > maximum) {
+                maximum = numbersFromScanner.get(position);
+            }
+            else if (numbersFromScanner.get(position) < -maximum) {
                 maximum = -1 * numbersFromScanner.get(position);
             }
+            
+            position += 1;
         }
         //System.out.printf("Maximum is: %d \n", maximum);
 
