@@ -8,13 +8,13 @@ public class Odmocnina {
         System.out.printf("%.10f", cubeRoot(theNumber, howAccurate));
     }
 
+    /*https://en.wikipedia.org/wiki/Cube_root*/
     public static double cubeRoot(double number, double accuracy) {
         double lastSolution = 1;
         double newSolution = 2 + accuracy;
 
         while (Math.abs(newSolution - lastSolution) >= accuracy) {
             lastSolution = newSolution;
-            /*https://en.wikipedia.org/wiki/Cube_root*/
             newSolution = (1.0 / 3.0) * (number / (lastSolution * lastSolution) + 2 * lastSolution);
         }
         return newSolution;
