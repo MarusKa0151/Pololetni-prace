@@ -30,6 +30,7 @@ public class CetnostCisel {
             position += 1;
         }
         //System.out.printf("Maximum is: %d \n", maximum);
+        sc.close();
 
         /*creating Array full of 0 for following work with indexes*/
         int[] arrayOfNumbers = new int[maximum + 1];
