@@ -89,7 +89,7 @@ public class Kalendar {
         return dayOfWeekIntValue;
     }
 
-
+    // ?this can Calendar do somehow by itself?
     public static boolean shorterOrLongerYear(int year) {
         if (year % 400 == 0) {
             return true;
@@ -122,7 +122,10 @@ public class Kalendar {
     }
 
 
-    /*I do not like myself for this part of code*/
+    /*I do not like myself for this part of code
+    better to use:
+    String.format("%1$-23s", myString) = that formates my string to left and total - 23 chars
+    String.format("%1$23s", myString = that formates my string to right, total - 23 chars*/
     public static int firstLine(int dayOfWeek) {
         System.out.print("|");
         int startWith = 0;
